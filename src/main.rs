@@ -1,20 +1,13 @@
 use lazy_static_include::*;
 
-use std::{
-    error::Error,
-    io::{self, Read},
-};
-
 use tracing::debug;
 
 use notary_server::{
     read_pem_file, run_server, AuthorizationProperties, LoggingProperties, NotarizationProperties,
-    NotarizationSessionRequest, NotarizationSessionResponse, NotaryServerError,
-    NotaryServerProperties, NotarySigningKeyProperties, ServerProperties, TLSProperties,
+    NotaryServerError, NotaryServerProperties, NotarySigningKeyProperties, ServerProperties, TLSProperties,
 };
 
 const NOTARY_CA_CERT_PATH: &str = "/data/sealed/tls/rootCA.crt";
-lazy_static_include_bytes! {NOTARY_CA_CERT_BYTES => "/data/sealed/tls/rootCA.crt",}
 
 const MAX_SENT: usize = 1 << 13;
 const MAX_RECV: usize = 1 << 13;
