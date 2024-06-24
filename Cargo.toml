@@ -1,0 +1,18 @@
+[package]
+name = "enclave-notary-server"
+version = "0.5.9"
+edition = "2021"
+
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+log = "0.4.21"
+openssl = { version = "0.10", features = ["vendored"] }
+rustls = "0.22.2"
+eyre = "0.6.8"
+tracing = "0.1"
+lazy-static-include = "3.2.1"
+structopt = "0.3.26"
+notary-server = { git = "https://github.com/tlsnotary/tlsn" }
