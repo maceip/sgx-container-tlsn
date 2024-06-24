@@ -19,7 +19,3 @@ fs.mounts = [
 sgx.trusted_files = [
   "file:/data/"
 ]
-
-sgx.protected_files = [
-  "file:/data/sealed/
-]

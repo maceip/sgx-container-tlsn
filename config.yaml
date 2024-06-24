@@ -12,7 +12,7 @@
 
 # If Distro is set to "auto", GSC detects the distro automatically by examining the supplied
 # Docker image. Alternatively, Distro can be set to one of the supported distros mentioned above.
-Distro: "auto"
+Distro: "ubuntu:22.04"
 
 # If the image has a specific registry, define it here.
 # Empty by default; example value: "registry.access.redhat.com/ubi8".
