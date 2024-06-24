@@ -11,7 +11,7 @@ sgx.enclave_size = "4G"
 sgx.thread_num = 64
 
 fs.mounts = [
-  { path = "/data", uri = "file:/data" },
+  { type = "encrypted", path = "/data", uri = "file:/data", key_name = "_sgx_mrenclave" },
 ]
 
 sgx.trusted_files = [
