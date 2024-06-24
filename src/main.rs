@@ -1,16 +1,10 @@
-use lazy_static_include::*;
 
 use tracing::debug;
 
 use notary_server::{
-    read_pem_file, run_server, AuthorizationProperties, LoggingProperties, NotarizationProperties,
+    run_server, AuthorizationProperties, LoggingProperties, NotarizationProperties,
     NotaryServerError, NotaryServerProperties, NotarySigningKeyProperties, ServerProperties, TLSProperties,
 };
-
-const NOTARY_CA_CERT_PATH: &str = "/data/sealed/tls/rootCA.crt";
-
-const MAX_SENT: usize = 1 << 13;
-const MAX_RECV: usize = 1 << 13;
 
 fn get_gramine_server_config() -> NotaryServerProperties {
     NotaryServerProperties {
